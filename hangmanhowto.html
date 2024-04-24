@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <!--styling-->
+    <link rel="stylesheet" href="indexstyle.css">
+    <!--end styling-->
+    <title>Hang-Ten</title>
+</head>
+
+<body>
+    <!-- start navbar-->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <a href="/" id="navbar__logo">Hang-Ten</a>
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar__menu">
+                <!--<li class="navbar__item">
+                    <a href="/" class="navbar__links">Home</a>
+                </li>-->
+                <!--<li class="navbar__item">
+                    <a href="/" class="navbar__links">How To Play</a>
+                </li>-->
+                <li class="navbar__btn">
+                    <a href="/" class="button">Login</a>
+                </li>
+                <li class="navbar__btn">
+                    <a href="/" class="button">Join</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--end navbar-->
+
+    <!--content area-->
+    <div class="main">
+        <div class="main__container">
+            <div class="main__content">
+                <h1>How To Play Hangman</h1>
+                <!--explanation-->
+                <h4>Goal</h4>
+                <ul>
+                    <li>
+                        Try to solve the puzzle before the man is hung (10 turns)
+                    </li>
+                </ul>
+                <br>
+                <h4>Playing</h4>
+                <ul>
+                    <li>
+                        Pick letters that you think will be in the word
+                    </li>
+                    <li>
+                        There will be a blank line for each letter in the word
+                    </li>
+                    <li>
+                        Each wrong letter will add a body part to the hangman - solve the puzzle before he dies!
+                    </li>
+                    <li>
+                        If the chosen letter is in the word, it will appear in the word. Otherwise, the hangman gains a body part and the letter is no longer available to guess with
+                    </li>
+                </ul>
+                <br>
+                <p>Good luck! </p>
+                <!--explanation-->
+            </div>
+        </div>
+    </div>
+    <!--end content-->
+    <script src="index.js"></script>
+</body>
+</html>
