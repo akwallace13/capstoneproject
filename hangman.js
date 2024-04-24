@@ -14,16 +14,28 @@ const wordDisplay = document.querySelector(".word-display");
 const guessesText = document.querySelector(".guesses-text b");
 const hangmanImage = document.querySelector(".hangman-box img");
 const gameModal = document.querySelector(".game-modal");
+const playAgaiBtn = document.querySelector(".game-modal")
 
-let currentWord, correctLetters = [], wrongGuessCount = 0;
+let currentWord, correctLetters = [], wrongGuessCount;
 const maxGuesses = 10;
+
+//start new game from pop-up
+const resetGame = () => {
+    correctLetters = [];
+    wrongGuessCount = 0;
+    hangmanImage.src = `images/hangman-${wrongGuessCount}.png`;
+    guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
+    keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
+    wordDisplay.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("");
+    gameModal.classList.remove("show");
+}
 
 //get word
 const getRandomWord = () => {
     const { word } = wordList[Math.floor(Math.random() * wordList.length)];
     currentWord = word;
     console.log(word);
-    wordDisplay.innerHTML = word.split("").map(() => `<li class="letter"></li>`).join("");
+    resetGame();
 }
 
 //show modal based on game outcome
@@ -74,4 +86,5 @@ for (let i = 97; i <= 122; i++) {
 }
 
 getRandomWord();
+playAgaiBtn.addEventListener("click", getRandomWord);
 //end game content
