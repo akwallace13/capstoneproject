@@ -1,6 +1,6 @@
 //click effect for sidebar for mobile users/smaller screens
-const menu = document.querySelector('#mobile-menu')
-const menuLinks = document.querySelector('.navbar__menu')
+const menu = document.querySelector('#mobile-menu');
+const menuLinks = document.querySelector('.navbar__menu');
 
 menu.addEventListener('click', function() {
     menu.classList.toggle('is-active')
@@ -31,7 +31,7 @@ const gameOver = (isVictory) => {
     setTimeout(() => {
         const modalText = isVictory ? `You found the word:` : `The correct answer was:`;
         gameModal.querySelector("img").src = `images/${isVictory ? 'victory' : 'lost'}.gif`;
-        gameModal.querySelector("h4").innerText = `${isVictory ? 'Congrats!' : 'Game Over!'}`;
+        gameModal.querySelector("h4").innerText = `${isVictory ? 'Winner!' : 'Game Over!'}`;
         gameModal.querySelector("p").innerHTML = `${modalText} <b>${currentWord}</b>`;
         gameModal.classList.add("show");
     }, 300);
@@ -45,7 +45,7 @@ const initGame = (button, clickedLetter) => {
         //show letters in puzzle
         [...currentWord].forEach((letter, index) => {
             if(letter === clickedLetter) {
-                correctLetters.push();
+                correctLetters.push(letter);
                 wordDisplay.querySelectorAll("li")[index].innerText = letter;
                 wordDisplay.querySelectorAll("li")[index].classList.add("guessed");
             }
@@ -58,7 +58,8 @@ const initGame = (button, clickedLetter) => {
     }
     button.disabled = true;
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
-    ///create module pop-up
+    
+    ///make module pop-up
     if (wrongGuessCount === maxGuesses) return gameOver(false);
     if (correctLetters.length === currentWord.length) return gameOver(true);
 }
