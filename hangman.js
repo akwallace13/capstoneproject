@@ -24,8 +24,8 @@ const resetGame = () => {
     correctLetters = [];
     wrongGuessCount = 0;
     hangmanImage.src = `images/hangman-${wrongGuessCount}.png`;
-    guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
-    keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false);
+    guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`; //business logic
+    keyboardDiv.querySelectorAll("button").forEach(btn => btn.disabled = false); //business logic
     wordDisplay.innerHTML = currentWord.split("").map(() => `<li class="letter"></li>`).join("");
     gameModal.classList.remove("show");
 }
@@ -71,7 +71,7 @@ const initGame = (button, clickedLetter) => {
     button.disabled = true;
     guessesText.innerText = `${wrongGuessCount} / ${maxGuesses}`;
     
-    ///make module pop-up
+    ///make module pop-up - business logic
     if (wrongGuessCount === maxGuesses) return gameOver(false);
     if (correctLetters.length === currentWord.length) return gameOver(true);
 }
