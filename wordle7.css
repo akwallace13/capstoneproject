@@ -99,7 +99,7 @@
 }
 
 /*for mobile screens*/
-@media screen and (max-width: 960px) {
+/*@media screen and (max-width: 960px) {
     .navbar__container {
         display: flex;
         justify-content: space-between;
@@ -124,7 +124,7 @@
     }
 
     /*activated by js*/
-    .navbar__menu.active {
+    /*.navbar__menu.active {
         background: #272343;
         top: 100%;
         opacity: 1;
@@ -197,20 +197,110 @@
 /*end navbar*/
 
 /*content*/
-.main__container {
-    display: grid;
-    grid-template-columns: 1fr;
+/*#container {
+    display: flex;
+    background-color: white;
+    height: 100%;
     align-items: center;
-    justify-self: center;
-    margin: 0 auto;
-    /*height: 90vh;*/
-    z-index: 1;
-    width: 100%;
-    max-width: 1300px;
-    padding: 50px 50px;
+    flex-direction: column;
+}*/
+/*end contents*/
+
+/*game starts*/
+#board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    overflow: hidden;
 }
 
-.main__content h1 {
-    font-size: 4rem;
-    color: #272343;
+#game {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 100px;
 }
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.square {
+    border: 2px solid black;
+    min-width: 60px;
+    min-height: 60px;
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#keyboard-container {
+    height: 200px;
+}
+
+.keyboard-row {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 0 auto 8px;
+    touch-action: manipulation;
+}
+
+.keyboard-row button {
+    font-family: inherit;
+    font-weight: bold;
+    border: 0;
+    padding: 0;
+    height: 58px;
+    cursor: pointer;
+    background-color: white;
+    color: black;
+    flex-grow: 1;
+    text-transform: uppercase;
+    margin-right: 6px;
+    border-radius: 4px;
+    border: 1px solid black;
+    user-select: none;
+}
+
+.keyboard-row button.wide-button {
+    flex-grow: 1.5;
+    border: 1px solid black;
+}
+
+.spacer-half {
+    flex-grow: 0.5;
+}
+
+.newWord a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    padding: 10px 20px;
+    border: none;
+    outline: none;
+    background: #e3f6f5;
+    color: #272343;
+    font-size: 1.5rem;
+}
+
+.newWord:hover a {
+    background: #272727;
+    color: #e3f6f5;
+    transition: all 0.3s ease;
+}
+
+.newWord:active {
+    transform: scale(0.94);
+}
+/*game ends*/
